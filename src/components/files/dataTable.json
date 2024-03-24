@@ -1,0 +1,177 @@
+ {
+    "mujeres": {
+        "20-39": {
+            "datos" : [
+                
+                {
+                    "grasa": "Grasa esencial",
+                    "datoMin": 10,
+                    "datoMax": 13
+                },
+                {
+                    "grasa": "Atletas",
+                    "datoMin": 13,
+                    "datoMax": 20
+                },
+                {
+                    "grasa": "Fitness",
+                    "datoMin": 20,
+                    "datoMax": 25
+                },
+                {
+                    "grasa": "Aceptable",
+                    "datoMin": 25,
+                    "datoMax": 35
+                },
+                {
+                    "grasa": "Obesidad",
+                    "datoMin": 35
+                }
+            ]
+        },
+        "40-59": {
+            "datos" : [
+                {
+                    "grasa": "Grasa esencial",
+                    "datoMin": 13,
+                    "datoMax": 16
+                },
+                {
+                    "grasa": "Atletas",
+                    "datoMin": 16,
+                    "datoMax": 22
+                },
+                {
+                    "grasa": "Fitness",
+                    "datoMin": 22,
+                    "datoMax": 27
+                },
+                {
+                    "grasa": "Aceptable",
+                    "datoMin": 27,
+                    "datoMax": 22
+                },
+                {
+                    "grasa": "Obesidad",
+                    "datoMin": 37
+                }
+            ]
+        },
+        "60-79": {
+            "datos" : [
+                {
+                    "grasa": "Grasa esencial",
+                    "datoMin": 14,
+                    "datoMax": 18
+                },
+                {
+                    "grasa": "Atletas",
+                    "datoMin": 18,
+                    "datoMax": 24
+                },
+                {
+                    "grasa": "Fitness",
+                    "datoMin": 24,
+                    "datoMax": 29
+                },
+                {
+                    "grasa": "Aceptable",
+                    "datoMin": 29,
+                    "datoMax": 39
+                },
+                {
+                    "grasa": "Obesidad",
+                    "datoMin": 39
+                }
+            ]
+        }
+        
+    },
+    "hombres": {
+        "20-39": {
+            "datos" : [
+                
+                {
+                    "grasa": "Grasa esencial",
+                    "datoMin": 2,
+                    "datoMax": 5
+                },
+                {
+                    "grasa": "Atletas",
+                    "datoMin": 5,
+                    "datoMax": 12
+                },
+                {
+                    "grasa": "Fitness",
+                    "datoMin": 13,
+                    "datoMax": 18
+                },
+                {
+                    "grasa": "Aceptable",
+                    "datoMin": 19,
+                    "datoMax": 26
+                },
+                {
+                    "grasa": "Obesidad",
+                    "datoMin": 26
+                }
+            ]
+        },
+        "40-59": {
+            "datos" : [
+                {
+                    "grasa": "Grasa esencial",
+                    "datoMin": 3,
+                    "datoMax": 7
+                },
+                {
+                    "grasa": "Atletas",
+                    "datoMin": 8,
+                    "datoMax": 14
+                },
+                {
+                    "grasa": "Fitness",
+                    "datoMin": 15,
+                    "datoMax": 21
+                },
+                {
+                    "grasa": "Aceptable",
+                    "datoMin": 22,
+                    "datoMax": 28
+                },
+                {
+                    "grasa": "Obesidad",
+                    "datoMin": 28
+                }
+            ]
+        },
+        "60-79": {
+            "datos" : [
+                {
+                    "grasa": "Grasa esencial",
+                    "datoMin": 6,
+                    "datoMax": 9
+                },
+                {
+                    "grasa": "Atletas",
+                    "datoMin": 10,
+                    "datoMax": 16
+                },
+                {
+                    "grasa": "Fitness",
+                    "datoMin": 17,
+                    "datoMax": 22
+                },
+                {
+                    "grasa": "Aceptable",
+                    "datoMin": 23,
+                    "datoMax": 29
+                },
+                {
+                    "grasa": "Obesidad",
+                    "datoMin": 29
+                }
+            ]
+        }
+    }
+}
