@@ -5,23 +5,24 @@ import femaleimage from '../images/female.png';
 import maleimage from '../images/male.png';
 import { ImcButtonImage } from "./ImcButtonImage";
 
-export const ImcForm = ({ calcularGrasaCorporal, resetGc, gc }) => {
+export const ImcForm = ({ calcularGrasaCorporal, resetGc}) => {
   
     const { data, setDataUser } = useContext(UserDataContext);
-    const {genero} = data;
+    const { edadUser, generoUser } = data;
+    
 
     const [first, setfirst] = useState({
       malebtn:false,
       femalebtn:false
     })
-
+   
     const { estatura, edad, peso, onInputChange, onResetForm } = useForm({
         estatura:'',
         edad:'',
         peso:'',
-        genero: genero
+        genero: 'masculino'
     });
-
+    console.log({ data });
     const onFormSubmit = (event) =>{
         event.preventDefault();
 
@@ -31,11 +32,13 @@ export const ImcForm = ({ calcularGrasaCorporal, resetGc, gc }) => {
             estatura,
             edad,
             peso,
-            genero
+            genero: generoUser
        }
 
+
+       
       calcularGrasaCorporal(data);
-      setDataUser(parseInt(edad), genero);
+      setDataUser(edad, genero);
     } 
 
     const resetValues = () => {
@@ -45,7 +48,7 @@ export const ImcForm = ({ calcularGrasaCorporal, resetGc, gc }) => {
 
     const setGenderImage = ( gender ) => {
       setDataUser(0, gender);
-
+      //console.log(gender);
       if (gender=='masculino') {
         setfirst({malebtn:true, femalebtn:false});
       }
@@ -106,6 +109,7 @@ export const ImcForm = ({ calcularGrasaCorporal, resetGc, gc }) => {
             image={femaleimage}
             selbtn={first.femalebtn}
             marginend={'me-2'}
+            edad={edadUser}
             
         />
         <ImcButtonImage

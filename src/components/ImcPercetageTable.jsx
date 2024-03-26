@@ -6,11 +6,13 @@ import { UserDataContext } from '../context/UserDataContext';
 export const ImcPercetageTable = () => {
 
     const { data } = useContext(UserDataContext);
-    const { genero, edad } = data;
+    const { generoUser, edadUser } = data;
 
-    const tipoDataGenero = genero === 'masculino' ? 'hombres' : 'mujeres';
+    console.log({ data });
+
+    const tipoDataGenero = generoUser === 'masculino' ? 'hombres' : 'mujeres';
     
-    const dataNumber = (edad) => {
+    const dataNumber = ( edad ) => {
 
         if (edad >= 20 && edad <= 39) {
             return '20-39';
@@ -28,7 +30,7 @@ export const ImcPercetageTable = () => {
   return (
     <div className='container'>
         <div className="row">
-        <h5 className='text-center'>Rango de edad {"["+dataNumber(edad)+"]"}</h5>
+        <h5 className='text-center'>Rango de edad {"["+dataNumber(edadUser)+"]"}</h5>
         <table className="table table-dark table-striped" >
         <thead>
         <tr>
@@ -38,7 +40,7 @@ export const ImcPercetageTable = () => {
         </thead>
         <tbody>
         {
-            jsonData[tipoDataGenero][dataNumber(edad)].datos.map((data, index) =>  (
+            jsonData[tipoDataGenero][dataNumber(edadUser)].datos.map((data, index) =>  (
                 <tr key={ index }>
                 <th scope="row">{ data.grasa }</th>
                 <td>{ data.datoMin } {data.datoMax?"-":">"} {data.datoMax} %</td>

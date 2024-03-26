@@ -9,9 +9,7 @@ import { UserDataContext } from '../context/UserDataContext';
 export const ImcGenderImage = () => {
 
   const { data } = useContext(UserDataContext);
-  const { genero } = data;
-
-  console.log(genero);
+  const { generoUser } = data;
 
   return (
     <div className="row">
@@ -30,7 +28,7 @@ export const ImcGenderImage = () => {
         <img 
             className=''
             alt='person'
-            src={ genero === 'masculino' ? hombre : mujer }
+            src={ generoUser === 'masculino' ? hombre : mujer }
             width={'120px'}
             height={'320px'}
             /> 
