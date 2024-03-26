@@ -1,16 +1,25 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "../hooks/useForm";
 import { UserDataContext } from "../context/UserDataContext";
+import femaleimage from '../images/female.png';
+import maleimage from '../images/male.png';
+import { ImcButtonImage } from "./ImcButtonImage";
 
-export const ImcForm = ({ calcularGrasaCorporal, getGender, resetGc }) => {
+export const ImcForm = ({ calcularGrasaCorporal, resetGc, gc }) => {
+  
+    const { data, setDataUser } = useContext(UserDataContext);
+    const {genero} = data;
 
-    const { setDataUser } = useContext(UserDataContext);
+    const [first, setfirst] = useState({
+      malebtn:false,
+      femalebtn:false
+    })
 
-    const { estatura, edad, peso, genero, onInputChange, onResetForm } = useForm({
+    const { estatura, edad, peso, onInputChange, onResetForm } = useForm({
         estatura:'',
         edad:'',
         peso:'',
-        genero:'masculino'
+        genero: genero
     });
 
     const onFormSubmit = (event) =>{
@@ -26,17 +35,23 @@ export const ImcForm = ({ calcularGrasaCorporal, getGender, resetGc }) => {
        }
 
       calcularGrasaCorporal(data);
-      setDataUser(edad, genero);
+      setDataUser(parseInt(edad), genero);
     } 
-
-    const  handleGender = ( gender ) => {
-      getGender(gender);
-      onInputChange(gender);
-    }
 
     const resetValues = () => {
       resetGc();
       onResetForm();
+    }
+
+    const setGenderImage = ( gender ) => {
+      setDataUser(0, gender);
+
+      if (gender=='masculino') {
+        setfirst({malebtn:true, femalebtn:false});
+      }
+      else{
+        setfirst({malebtn:false, femalebtn:true});
+      }
     }
 
   return (
@@ -82,14 +97,28 @@ export const ImcForm = ({ calcularGrasaCorporal, getGender, resetGc }) => {
                   min={0}
                   />
         </div>
-        <div className="mb-3">
-          <label htmlFor="genero" className="form-label">genero</label>
-              <select onChange={ handleGender } className="form-select" name="genero" id="genero" aria-label="Default select example" defaultValue={''}>
-                <option value="masculino">Masculino</option>
-                <option value="femenino">Femenino</option>
-              </select>
-        </div>
-      <div className="row d-flex justify-content-center">
+
+      <div className="row d-flex justify-content-center">    
+        <ImcButtonImage
+            setGenderImage={setGenderImage}
+            nombre={"Mujer"}
+            genero={'femenino'}
+            image={femaleimage}
+            selbtn={first.femalebtn}
+            marginend={'me-2'}
+            
+        />
+        <ImcButtonImage
+            setGenderImage={setGenderImage}
+            nombre={"Hombre"}
+            genero={'masculino'}
+            selbtn={first.malebtn}
+            image={maleimage}
+            
+        />
+      </div>
+
+      <div className="row d-flex justify-content-center mt-4">
         <button type="submit" className="btn btn-primary" style={{width:'40%'}}> Calcular </button>
         <button type='reset' className="btn btn-primary ms-3" style={{width:'40%'}} onClick={ resetValues }>Reset</button>
       </div>

@@ -2,9 +2,16 @@
 import tallimetro from '../images/tallimetro_movil.png';
 import hombre from '../images/hombre.png';
 import mujer from '../images/mujer.png';
+import { useContext } from 'react';
+import { UserDataContext } from '../context/UserDataContext';
 
 
-export const ImcGenderImage = ({ gender }) => {
+export const ImcGenderImage = () => {
+
+  const { data } = useContext(UserDataContext);
+  const { genero } = data;
+
+  console.log(genero);
 
   return (
     <div className="row">
@@ -23,7 +30,7 @@ export const ImcGenderImage = ({ gender }) => {
         <img 
             className=''
             alt='person'
-            src={ gender === 'masculino' ? hombre : mujer }
+            src={ genero === 'masculino' ? hombre : mujer }
             width={'120px'}
             height={'320px'}
             /> 

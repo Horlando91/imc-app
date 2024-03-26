@@ -5,7 +5,6 @@ export const ImcOperations = (genero, edad) => {
 
     const [ gc, setGc ] = useState(0);
 
-    
 
     const dataNumber = (edad) => {
 
