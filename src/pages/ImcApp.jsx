@@ -15,26 +15,24 @@ export const ImcApp = () => {
   return (
     <UserDataProvider>
 
-        <div className="col-12">
+        <div className="container">
                     <HeaderAnimate />
         </div>
         <div className="container p-4 border rounded border-primary">
-            <div className="row">
             <ImcFormAndImage
                 calcularGrasaCorporal={ calcularGrasaCorporal }
                 resetGc={ resetGc }
             />
-            </div>
         </div>
 
         {   gc.grasaCorporal!=0 && (
             <div className="container mt-5">
-                <div className="row">
+                <div className="row d-flex justify-content-center">
                
-                <div className="col-6">
+                <div className="col-sm-12 col-md-6">
                     <ImcPercetageTable />
                 </div>
-                <div className="col-6">
+                <div className="col-sm-12 col-md-6">
                 <h3>Resultados obtenidos</h3>
                     <ImcGcData
                         gc={ gc }

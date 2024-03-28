@@ -23,11 +23,14 @@ export const useGc = ( initialState = {} ) => {
 
   const obtenerTipoGrasa = (genero, edad, grasaCorporal) => {
    
-    console.log({genero, edad});
+    console.log("gc: "+grasaCorporal);
+   
 
     const tipoDataGenero = genero === 'masculino' ? 'hombres' : 'mujeres';
-
-   return jsonData[tipoDataGenero][dataNumber(edad)].datos.find((data) => grasaCorporal >= data.datoMin && grasaCorporal <= data.datoMax ).grasa;
+    
+    
+    // try catch o algo parecido
+   return jsonData[tipoDataGenero][dataNumber(edad)].datos.find(( data ) => (grasaCorporal >= data.datoMin && grasaCorporal <= data.datoMax) || (grasaCorporal >= data.datoTop)  ).grasa;
 
   }
 
@@ -38,10 +41,13 @@ export const useGc = ( initialState = {} ) => {
     const IMC = ( peso / (estaturaconcoma * estaturaconcoma)).toFixed(2);
        
     // Grasa corporal
-    const GC = (1.2 * (IMC)) + (0.23 * edad) - ( varDepSexo * (sexNumber)) - 5.4
+    const GC = ((1.2 * (IMC)) + (0.23 * edad) - ( varDepSexo * (sexNumber)) - 5.4).toFixed(2);
+    
     const tipo = obtenerTipoGrasa(genero, edad, GC);
 
-    setGc({grasaCorporal: GC.toFixed(2), tipoGrasa: tipo });
+    setGc({grasaCorporal: GC, tipoGrasa: tipo });
+
+    console.log("tipo"+tipo);
     
         return GC;
     }

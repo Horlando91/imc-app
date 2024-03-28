@@ -9,31 +9,13 @@ import { UserDataContext } from '../context/UserDataContext';
 export const ImcGenderImage = () => {
 
   const { data } = useContext(UserDataContext);
-  const { generoUser } = data;
+  const { genero } = data;
 
   return (
-    <div className="row">
-         { /*<div className="col-3">
-            <img 
-            className=''
-            alt='tallimetro'
-            src={tallimetro}
-            width={'120px'}
-            
-            height={'320px'}
-            />
-        </div>*/}
-
-       <div className="col 6">
-        <img 
-            className=''
+      <img 
+            className="img-fluid"
             alt='person'
-            src={ generoUser === 'masculino' ? hombre : mujer }
-            width={'120px'}
-            height={'320px'}
-            /> 
-       </div>
-    </div>
-    
+            src={ genero === 'masculino' ? hombre : mujer }
+            />     
   )
 }

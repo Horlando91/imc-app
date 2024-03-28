@@ -6,11 +6,9 @@ import { UserDataContext } from '../context/UserDataContext';
 export const ImcPercetageTable = () => {
 
     const { data } = useContext(UserDataContext);
-    const { generoUser, edadUser } = data;
+    const { edad, genero } = data;
 
-    console.log({ data });
-
-    const tipoDataGenero = generoUser === 'masculino' ? 'hombres' : 'mujeres';
+    const tipoDataGenero = genero === 'masculino' ? 'hombres' : 'mujeres';
     
     const dataNumber = ( edad ) => {
 
@@ -30,20 +28,20 @@ export const ImcPercetageTable = () => {
   return (
     <div className='container'>
         <div className="row">
-        <h5 className='text-center'>Rango de edad {"["+dataNumber(edadUser)+"]"}</h5>
-        <table className="table table-dark table-striped" >
+        <h5 className='text-center'>Rango de edad {"["+dataNumber(edad)+"]"}</h5>
+        <table className="table table-light border border border-primary-subtle border-opacity-50" >
         <thead>
-        <tr>
-            <th scope="col" className='bg bg-primary'>Descripción</th>
-            <th scope="col" className='bg bg-primary'>{tipoDataGenero}</th>
+        <tr >
+            <th scope="col" >Descripción</th>
+            <th scope="col" >{tipoDataGenero}</th>
         </tr>
         </thead>
         <tbody>
         {
-            jsonData[tipoDataGenero][dataNumber(edadUser)].datos.map((data, index) =>  (
+            jsonData[tipoDataGenero][dataNumber(edad)].datos.map((data, index) =>  (
                 <tr key={ index }>
                 <th scope="row">{ data.grasa }</th>
-                <td>{ data.datoMin } {data.datoMax?"-":">"} {data.datoMax} %</td>
+                <td>{ data.datoMin || data.datoTop } {data.datoTop?">":"-"} {data.datoMax} %</td>
             </tr>
             ))
         }

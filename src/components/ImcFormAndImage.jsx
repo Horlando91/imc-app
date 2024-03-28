@@ -5,18 +5,20 @@ import { ImcGenderImage } from './ImcGenderImage'
 export const ImcFormAndImage = ({ calcularGrasaCorporal, resetGc}) => {
 
   return (
-    <div className='container d-flex justify-content-center'>
-        <div className="col-3">
+        <div className="row d-flex justify-content-center">
+          <div className="col-5 col-sm-3 col-md-3 col-lg-2">
                 <ImcForm
                     calcularGrasaCorporal={ calcularGrasaCorporal }
                     resetGc = { resetGc }
                 />
-        </div>
-        <div className="col-3 d-flex justify-content-center">
+          </div>
+              <div className="col-4 col-sm-3 col-md-3 col-lg-2 ">
                 <ImcGenderImage
-                />
+                    />
+              </div>
         </div>
-    </div>
+        
+    
     
   )
 }

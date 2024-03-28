@@ -2,7 +2,6 @@
     "mujeres": {
         "20-39": {
             "datos" : [
-                
                 {
                     "grasa": "Grasa esencial",
                     "datoMin": 10,
@@ -25,7 +24,7 @@
                 },
                 {
                     "grasa": "Obesidad",
-                    "datoMin": 35
+                    "datoTop": 35
                 }
             ]
         },
@@ -49,11 +48,11 @@
                 {
                     "grasa": "Aceptable",
                     "datoMin": 27,
-                    "datoMax": 22
+                    "datoMax": 37
                 },
                 {
                     "grasa": "Obesidad",
-                    "datoMin": 37
+                    "datoTop": 37
                 }
             ]
         },
@@ -81,7 +80,7 @@
                 },
                 {
                     "grasa": "Obesidad",
-                    "datoMin": 39
+                    "datoTop": 39
                 }
             ]
         }
@@ -113,7 +112,7 @@
                 },
                 {
                     "grasa": "Obesidad",
-                    "datoMin": 26
+                    "datoTop": 26
                 }
             ]
         },
@@ -141,7 +140,7 @@
                 },
                 {
                     "grasa": "Obesidad",
-                    "datoMin": 28
+                    "datoTop": 28
                 }
             ]
         },
@@ -169,7 +168,7 @@
                 },
                 {
                     "grasa": "Obesidad",
-                    "datoMin": 29
+                    "datoTop": 29
                 }
             ]
         }

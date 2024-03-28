@@ -8,11 +8,11 @@ import { ImcButtonImage } from "./ImcButtonImage";
 export const ImcForm = ({ calcularGrasaCorporal, resetGc}) => {
   
     const { data, setDataUser } = useContext(UserDataContext);
-    const { edadUser, generoUser } = data;
+    const { genero } = data;
     
 
     const [first, setfirst] = useState({
-      malebtn:false,
+      malebtn:true,
       femalebtn:false
     })
    
@@ -22,7 +22,7 @@ export const ImcForm = ({ calcularGrasaCorporal, resetGc}) => {
         peso:'',
         genero: 'masculino'
     });
-    console.log({ data });
+    
     const onFormSubmit = (event) =>{
         event.preventDefault();
 
@@ -32,7 +32,7 @@ export const ImcForm = ({ calcularGrasaCorporal, resetGc}) => {
             estatura,
             edad,
             peso,
-            genero: generoUser
+            genero: genero
        }
 
 
@@ -48,7 +48,7 @@ export const ImcForm = ({ calcularGrasaCorporal, resetGc}) => {
 
     const setGenderImage = ( gender ) => {
       setDataUser(0, gender);
-      //console.log(gender);
+     
       if (gender=='masculino') {
         setfirst({malebtn:true, femalebtn:false});
       }
@@ -101,30 +101,32 @@ export const ImcForm = ({ calcularGrasaCorporal, resetGc}) => {
                   />
         </div>
 
-      <div className="row d-flex justify-content-center">    
-        <ImcButtonImage
-            setGenderImage={setGenderImage}
-            nombre={"Mujer"}
-            genero={'femenino'}
-            image={femaleimage}
-            selbtn={first.femalebtn}
-            marginend={'me-2'}
-            edad={edadUser}
-            
-        />
-        <ImcButtonImage
-            setGenderImage={setGenderImage}
-            nombre={"Hombre"}
-            genero={'masculino'}
-            selbtn={first.malebtn}
-            image={maleimage}
-            
-        />
+      <div className="row d-flex justify-content-center"> 
+          <ImcButtonImage
+              setGenderImage={setGenderImage}
+              nombre={"Mujer"}
+              genero={'femenino'}
+              image={femaleimage}
+              selbtn={first.femalebtn}
+              marginend={'me-2'}
+          />
+          <ImcButtonImage
+              setGenderImage={setGenderImage}
+              nombre={"Hombre"}
+              genero={'masculino'}
+              selbtn={first.malebtn}
+              image={maleimage} 
+          />
       </div>
 
-      <div className="row d-flex justify-content-center mt-4">
-        <button type="submit" className="btn btn-primary" style={{width:'40%'}}> Calcular </button>
-        <button type='reset' className="btn btn-primary ms-3" style={{width:'40%'}} onClick={ resetValues }>Reset</button>
+      <div className="row g-2 mt-4">
+        <div className="col ">
+          <button type="submit" className="btn btn-success" style={{width:"100%"}}> Calcular </button>
+        </div>
+        
+        <div className="col">
+        <button type='reset' className="btn btn-danger"  onClick={ resetValues } style={{width:"100%"}}>Reset</button>
+        </div>
       </div>
      </form>
   )

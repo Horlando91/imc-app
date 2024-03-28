@@ -4,14 +4,14 @@ import { UserDataContext } from './UserDataContext';
 export const UserDataProvider = ({ children })  => {
 
    const [data, setData] = useState({
-    edadUser:0,
-    generoUser:''
+    edad:0,
+    genero:'masculino'
    })
 
-   const setDataUser = (edadUser, generoUser) => {
+   const setDataUser = (edad, genero) => {
     setData({
-        edadUser,
-        generoUser
+        edad,
+        genero
     })
    }
 

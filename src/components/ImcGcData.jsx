@@ -4,7 +4,7 @@ import { UserDataContext } from '../context/UserDataContext';
 
 export const ImcGcData = ({ gc }) => {
 
-    const {grasaCorporal, tipoGrasa} = gc;
+    const { grasaCorporal, tipoGrasa } = gc;
   
   return (
     <>
