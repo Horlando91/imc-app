@@ -1,24 +1,20 @@
-import React, {useState} from 'react'
-import { ImcForm } from './ImcForm'
-import { ImcGenderImage } from './ImcGenderImage'
+
+import { ImcForm, ImcGenderImage } from "./";
 
 export const ImcFormAndImage = ({ calcularGrasaCorporal, resetGc}) => {
 
   return (
-        <div className="row d-flex justify-content-center">
-          <div className="col-5 col-sm-3 col-md-3 col-lg-2">
+        <div className="row d-flex justify-content-center my-form">
+            <div className="col col-sm-3 col-md-3 col-lg-3">
                 <ImcForm
                     calcularGrasaCorporal={ calcularGrasaCorporal }
                     resetGc = { resetGc }
                 />
-          </div>
-              <div className="col-4 col-sm-3 col-md-3 col-lg-2 ">
-                <ImcGenderImage
-                    />
-              </div>
+            </div>
+            <div className="col col-sm-3 col-md-3 col-lg-3">
+                  <ImcGenderImage
+                  />
+            </div>
         </div>
-        
-    
-    
   )
 }

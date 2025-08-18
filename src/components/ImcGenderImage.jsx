@@ -1,10 +1,7 @@
-
-import tallimetro from '../images/tallimetro_movil.png';
-import hombre from '../images/hombre.png';
-import mujer from '../images/mujer.png';
 import { useContext } from 'react';
 import { UserDataContext } from '../context/UserDataContext';
 
+import { hombre, mujer } from '../images';
 
 export const ImcGenderImage = () => {
 
@@ -13,9 +10,9 @@ export const ImcGenderImage = () => {
 
   return (
       <img 
-            className="img-fluid"
+            className="img-fluid my-image"
             alt='person'
-            src={ genero === 'masculino' ? hombre : mujer }
+            src={ genero === 'masculino' ? hombre : mujer}
             />     
   )
 }

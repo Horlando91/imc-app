@@ -1,0 +1,40 @@
+.form-button {
+    width: 100%;
+}
+
+input,
+input::placeholder {
+    
+    font-size: small;
+    font-style: italic;
+}
+
+.my-image{
+  width: 50%;
+}
+
+.my-form{
+  width: 800px;
+}
+
+
+@media only screen and ((max-width: 576px) ) {
+
+    .my-form{
+      width: 300px;
+    }
+
+    .my-image{
+      width: 40% ;
+    }
+
+    .resultados{
+      margin-top: 10px;
+    }
+
+    .box{
+      font-size: 1.1rem;
+    }
+  }
+
+

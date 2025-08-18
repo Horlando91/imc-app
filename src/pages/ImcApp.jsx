@@ -1,9 +1,12 @@
-import { HeaderAnimate } from '../components/HeaderAnimate'
-import { ImcFormAndImage } from '../components/ImcFormAndImage';
-import { ImcGcData } from '../components/ImcGcData';
-import { ImcPercetageTable } from '../components/ImcPercetageTable';
+
+import { HeaderAnimate, ImcFormAndImage, ImcGcData, ImcPercetageTable } from '../components'
+
 import { UserDataProvider } from '../context/UserDataProvider';
+
 import { useGc } from '../hooks/useGc'
+
+import '../styles/effects.css';
+import '../styles/form.css';
 
 export const ImcApp = () => {
 
@@ -14,11 +17,10 @@ export const ImcApp = () => {
 
   return (
     <UserDataProvider>
-
-        <div className="container">
+        <div className="container text-center mb-5 mt-5">
                     <HeaderAnimate />
         </div>
-        <div className="container p-4 border rounded border-primary">
+        <div className="container p-1 border-primary box">
             <ImcFormAndImage
                 calcularGrasaCorporal={ calcularGrasaCorporal }
                 resetGc={ resetGc }
@@ -32,7 +34,7 @@ export const ImcApp = () => {
                 <div className="col-sm-12 col-md-6">
                     <ImcPercetageTable />
                 </div>
-                <div className="col-sm-12 col-md-6">
+                <div className="col-sm-12 col-md-6 resultados">
                 <h3>Resultados obtenidos</h3>
                     <ImcGcData
                         gc={ gc }

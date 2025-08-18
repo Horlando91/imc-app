@@ -1,6 +1,3 @@
-import React, {useContext} from 'react';
-import { ImcOperations } from '../operations/ImcOperations';
-import { UserDataContext } from '../context/UserDataContext';
 
 export const ImcGcData = ({ gc }) => {
 

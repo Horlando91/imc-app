@@ -1,8 +1,11 @@
 import { useContext, useState } from "react";
+
 import { useForm } from "../hooks/useForm";
+
 import { UserDataContext } from "../context/UserDataContext";
-import femaleimage from '../images/female.png';
-import maleimage from '../images/male.png';
+
+import { symbologyfemale, symbologymale } from "../images";
+
 import { ImcButtonImage } from "./ImcButtonImage";
 
 export const ImcForm = ({ calcularGrasaCorporal, resetGc}) => {
@@ -11,7 +14,7 @@ export const ImcForm = ({ calcularGrasaCorporal, resetGc}) => {
     const { genero } = data;
     
 
-    const [first, setfirst] = useState({
+    const [selbutton, setSelButton] = useState({
       malebtn:true,
       femalebtn:false
     })
@@ -35,8 +38,6 @@ export const ImcForm = ({ calcularGrasaCorporal, resetGc}) => {
             genero: genero
        }
 
-
-       
       calcularGrasaCorporal(data);
       setDataUser(edad, genero);
     } 
@@ -50,10 +51,10 @@ export const ImcForm = ({ calcularGrasaCorporal, resetGc}) => {
       setDataUser(0, gender);
      
       if (gender=='masculino') {
-        setfirst({malebtn:true, femalebtn:false});
+        setSelButton({malebtn:true, femalebtn:false});
       }
       else{
-        setfirst({malebtn:false, femalebtn:true});
+        setSelButton({malebtn:false, femalebtn:true});
       }
     }
 
@@ -66,6 +67,7 @@ export const ImcForm = ({ calcularGrasaCorporal, resetGc}) => {
                   id="estatura" 
                   aria-describedby="estaturaHelp"
                   placeholder="Ejemplo: 170"
+                  
                   name="estatura"
                   onChange={onInputChange}
                   value={estatura}
@@ -101,31 +103,32 @@ export const ImcForm = ({ calcularGrasaCorporal, resetGc}) => {
                   />
         </div>
 
-      <div className="row d-flex justify-content-center"> 
+      <div className="row d-flex justify-content-center gx-1"> 
           <ImcButtonImage
               setGenderImage={setGenderImage}
               nombre={"Mujer"}
               genero={'femenino'}
-              image={femaleimage}
-              selbtn={first.femalebtn}
-              marginend={'me-2'}
+              image={symbologyfemale}
+              selbtn={selbutton.femalebtn}
+             
           />
           <ImcButtonImage
               setGenderImage={setGenderImage}
               nombre={"Hombre"}
               genero={'masculino'}
-              selbtn={first.malebtn}
-              image={maleimage} 
+              selbtn={selbutton.malebtn}
+              image={symbologymale} 
+             
           />
       </div>
 
-      <div className="row g-2 mt-4">
-        <div className="col ">
-          <button type="submit" className="btn btn-success" style={{width:"100%"}}> Calcular </button>
+      <div className="row g-1 mt-4">
+        <div className="col-12">
+          <button type="submit" className="btn btn-success form-button"> Calcular </button>
         </div>
         
-        <div className="col">
-        <button type='reset' className="btn btn-danger"  onClick={ resetValues } style={{width:"100%"}}>Reset</button>
+        <div className="col-12">
+        <button type='reset' className="btn btn-danger form-button"  onClick={ resetValues }> Reset </button>
         </div>
       </div>
      </form>

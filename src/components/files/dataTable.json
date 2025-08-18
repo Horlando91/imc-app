@@ -8,7 +8,7 @@
                     "datoMax": 13
                 },
                 {
-                    "grasa": "Atletas",
+                    "grasa": "Atleta",
                     "datoMin": 13,
                     "datoMax": 20
                 },
@@ -36,7 +36,7 @@
                     "datoMax": 16
                 },
                 {
-                    "grasa": "Atletas",
+                    "grasa": "Atleta",
                     "datoMin": 16,
                     "datoMax": 22
                 },
@@ -64,7 +64,7 @@
                     "datoMax": 18
                 },
                 {
-                    "grasa": "Atletas",
+                    "grasa": "Atleta",
                     "datoMin": 18,
                     "datoMax": 24
                 },
@@ -96,7 +96,7 @@
                     "datoMax": 5
                 },
                 {
-                    "grasa": "Atletas",
+                    "grasa": "Atleta",
                     "datoMin": 5,
                     "datoMax": 12
                 },
@@ -124,7 +124,7 @@
                     "datoMax": 7
                 },
                 {
-                    "grasa": "Atletas",
+                    "grasa": "Atleta",
                     "datoMin": 8,
                     "datoMax": 14
                 },
@@ -152,7 +152,7 @@
                     "datoMax": 9
                 },
                 {
-                    "grasa": "Atletas",
+                    "grasa": "Atleta",
                     "datoMin": 10,
                     "datoMax": 16
                 },

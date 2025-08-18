@@ -23,9 +23,7 @@ export const useGc = ( initialState = {} ) => {
 
   const obtenerTipoGrasa = (genero, edad, grasaCorporal) => {
    
-    console.log("gc: "+grasaCorporal);
-   
-
+  
     const tipoDataGenero = genero === 'masculino' ? 'hombres' : 'mujeres';
     
     
@@ -46,9 +44,6 @@ export const useGc = ( initialState = {} ) => {
     const tipo = obtenerTipoGrasa(genero, edad, GC);
 
     setGc({grasaCorporal: GC, tipoGrasa: tipo });
-
-    console.log("tipo"+tipo);
-    
         return GC;
     }
 

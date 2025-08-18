@@ -1,11 +1,14 @@
 
-export const ImcButtonImage = ({setGenderImage, nombre, genero, image, selbtn, marginend }) => {
+export const ImcButtonImage = ({setGenderImage, genero, image, selbtn}) => {
 
     const buttoncolor = selbtn? 'btn btn-primary' : 'btn btn-outline-primary';
     
   return (
-    <button type="button" className={buttoncolor +" "+ marginend}
-            style={{width: "35%"}}
+    <div className="col-5">
+       <button type="button" className={buttoncolor}
+            style={{width: "100%"}}
             onClick={() => setGenderImage(genero)}>  <img  className="img-fluid" src={image} alt=""/> </button>
+    </div>
+   
   )
 }
