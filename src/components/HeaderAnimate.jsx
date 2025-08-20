@@ -2,7 +2,6 @@
 import { TypeAnimation } from "react-type-animation";
 
 export const HeaderAnimate = () => {
-    console.log("Me volvi a pintar xD");
 
   return (
 
@@ -16,7 +15,7 @@ export const HeaderAnimate = () => {
           500,
           'Calculadora de grasa corporal',
           500,
-          'Versión 1.0',
+          'Versión 1.1',
           500,
           '',
           500,
